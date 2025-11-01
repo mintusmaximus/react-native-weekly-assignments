@@ -4,8 +4,12 @@ import { StyleSheet, Text, TextInput, View } from "react-native";
 
 export default function App() {
   const [input, setInput] = useState<string>("");
-  const lowerLimit: number = input ? Number((220 - Number(input)) * 0.65) : 0;
-  const upperLimit: number = input ? Number((220 - Number(input)) * 0.85) : 0;
+  const lowerLimit: number = input
+    ? Math.floor((220 - Number(input)) * 0.65)
+    : 0;
+  const upperLimit: number = input
+    ? Math.floor((220 - Number(input)) * 0.85)
+    : 0;
 
   return (
     <View style={styles.container}>
